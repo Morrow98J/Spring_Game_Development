@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://timer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Energybar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://icon_Template.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Lifebar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/BattleScene/cards_Hand.gd" type="Script" id=6]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GUITop" type="MarginContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 137.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUITop"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 117.0
+
+[node name="bars" type="VBoxContainer" parent="GUITop/HBoxContainer"]
+margin_right = 880.0
+margin_bottom = 97.0
+size_flags_horizontal = 3
+
+[node name="Lifebar" parent="GUITop/HBoxContainer/bars" instance=ExtResource( 5 )]
+
+[node name="Energybar" parent="GUITop/HBoxContainer/bars" instance=ExtResource( 3 )]
+margin_top = 57.0
+margin_bottom = 97.0
+
+[node name="counters" type="HBoxContainer" parent="GUITop/HBoxContainer"]
+margin_left = 884.0
+margin_right = 984.0
+margin_bottom = 97.0
+
+[node name="icon_Template" parent="GUITop/HBoxContainer/counters" instance=ExtResource( 2 )]
+margin_bottom = 97.0
+
+[node name="GUIBottom" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -322.0
+margin_right = -5.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUIBottom"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 999.0
+margin_bottom = 302.0
+
+[node name="cards_Hand" type="HBoxContainer" parent="GUIBottom/HBoxContainer"]
+margin_right = 875.0
+margin_bottom = 282.0
+size_flags_horizontal = 3
+script = ExtResource( 6 )
+
+[node name="cards_Refill" type="HBoxContainer" parent="GUIBottom/HBoxContainer"]
+margin_left = 879.0
+margin_right = 979.0
+margin_bottom = 282.0
+
+[node name="icon_Template" parent="GUIBottom/HBoxContainer/cards_Refill" instance=ExtResource( 4 )]
+margin_bottom = 282.0

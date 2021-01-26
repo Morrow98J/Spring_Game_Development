@@ -1,0 +1,133 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/font/ui_subheader_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/font/ui_header_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scenes/CardSelectionScene/CardSelection.gd" type="Script" id=3]
+[ext_resource path="res://scenes/CardSelectionScene/CardButton.tscn" type="PackedScene" id=4]
+
+[node name="CardSelection" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "Main scene with user controls to pick cards from a deck to form a hand for battle."
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 974.0
+margin_bottom = 619.0
+custom_constants/separation = 20
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 924.0
+margin_bottom = 46.0
+custom_fonts/font = ExtResource( 2 )
+text = "assemble your team"
+
+[node name="DeckSection" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 66.0
+margin_right = 924.0
+margin_bottom = 286.0
+rect_clip_content = true
+size_flags_vertical = 3
+
+[node name="DeckHeader" type="Label" parent="MarginContainer/VBoxContainer/DeckSection"]
+visible = false
+margin_right = 924.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 1 )
+text = "Your deck"
+
+[node name="Roulette" type="ScrollContainer" parent="MarginContainer/VBoxContainer/DeckSection"]
+margin_right = 924.0
+margin_bottom = 220.0
+size_flags_vertical = 3
+scroll_vertical_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/DeckSection/Roulette"]
+margin_right = 924.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" parent="MarginContainer/VBoxContainer/DeckSection/Roulette/HBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 160.0
+margin_bottom = 220.0
+
+[node name="Footer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 306.0
+margin_right = 924.0
+margin_bottom = 569.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+custom_constants/separation = 50
+
+[node name="SelectionSection" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Footer"]
+margin_right = 692.0
+margin_bottom = 263.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="SelectionHeader" type="Label" parent="MarginContainer/VBoxContainer/Footer/SelectionSection"]
+margin_right = 692.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 1 )
+text = "Battle hand"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Footer/SelectionSection"]
+margin_top = 43.0
+margin_right = 692.0
+margin_bottom = 263.0
+rect_clip_content = true
+size_flags_vertical = 3
+custom_constants/separation = -60
+
+[node name="Button" parent="MarginContainer/VBoxContainer/Footer/SelectionSection/HBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 160.0
+margin_bottom = 220.0
+
+[node name="Button2" parent="MarginContainer/VBoxContainer/Footer/SelectionSection/HBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 100.0
+margin_right = 260.0
+margin_bottom = 220.0
+
+[node name="Button3" parent="MarginContainer/VBoxContainer/Footer/SelectionSection/HBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 200.0
+margin_right = 360.0
+margin_bottom = 220.0
+
+[node name="StartBattleButton" type="Button" parent="MarginContainer/VBoxContainer/Footer"]
+margin_left = 742.0
+margin_top = 234.0
+margin_right = 924.0
+margin_bottom = 263.0
+size_flags_vertical = 8
+custom_fonts/font = ExtResource( 1 )
+text = "Start Battle"

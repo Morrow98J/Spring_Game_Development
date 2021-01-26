@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/font/Squares Bold Free.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/cards/robotbarracks.png" type="Texture" id=2]
+[ext_resource path="res://CardControl.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 1 )
+
+[node name="Card" type="Control"]
+margin_right = 400.0
+margin_bottom = 550.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardSprite" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelBorder" type="MarginContainer" parent="."]
+margin_right = 120.0
+margin_bottom = 106.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="LabelBorder"]
+margin_right = 120.0
+margin_bottom = 106.0
+custom_constants/margin_right = 30
+custom_constants/margin_top = 30
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 30
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="LabelBorder/MarginContainer"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 90.0
+margin_bottom = 76.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+text = "48"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="LabelBorder"]
+show_behind_parent = true
+margin_right = 120.0
+margin_bottom = 106.0
+color = Color( 0, 0, 0, 0.423529 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

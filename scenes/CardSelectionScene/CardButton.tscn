@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="Button" type="Button"]
+anchor_right = 0.195313
+anchor_bottom = 0.415
+margin_right = 200.0
+margin_bottom = 301.0
+rect_min_size = Vector2( 160, 220 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": true
+}
